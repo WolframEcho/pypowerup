@@ -5,9 +5,11 @@
         "cimcoder",
         "counts",
         "ctre",
+        "done",
         "nifier",
         "per",
         "rev",
-        "wpilib"
+        "wpilib",
+        "xbox"
     ]
 }

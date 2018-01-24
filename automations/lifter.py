@@ -1,7 +1,6 @@
 from magicbot import StateMachine, state, timed_state
-
+import wpilib
 from components.lifter import Lifter
-
 from componets.intake import Intake
 
 
@@ -11,8 +10,16 @@ class LifterAutomation(StateMachine):
 
     @state(First=True, must_finish=True)
     def move(self):
+        self.xbox = wpilib.XboxController(0)
         """Move to lifter height according to button press(5 buttons)"""
-    
+        if self.xbox.getYButtonReleased():
+            self.move_upper_scale()
+        if self.xbox.getXButtonReleased():
+            self.move_lower_scale()
+        if self.xbox.getAButtonReleased():
+            self.move_switch()
+        if self.xboxBButtonReleased():
+            self.move_balanced_scale()
 
     @state(must_finish=True)
     def move_complete(self):
@@ -29,21 +36,5 @@ class LifterAutomation(StateMachine):
     @state(must_finish=True)
     def reset(self):
         self.intake.intake_push(False)
-
-
-
-
-
-
-
-
-
-
-                if self.switchButton():
-            self.next_state("move_complete")
-        if self.lower_scaleButton():
-            self.next_state("move_complete")
-        if self.balanced_scaleButton():
-            self.next_state("move_complete")
-        if self.upper_scaleButton():
-            self.next_state("move_complete")
+        self.lifter.ground_height()
+        self.done

@@ -62,15 +62,3 @@ class Lifter:
             int: The location of the lift
         """
         return self.motor.getSelectedSensorPosition(0)
-
-    def switchButton(self):
-        """Button on keyboard that calls the function move_switch."""
-    
-    def lower_scaleButton(self):
-        """Button on keyboard that calls the function move_lower_scale."""
-    
-    def balanced_scaleButton(self):
-        """Button on keyboard that calls the function move_balanced_scale."""
-
-    def upper_scaleButton(self):
-        """Button on keyboard that calls the function move_upper_scale."""
