@@ -8,6 +8,7 @@ from components.intake import Intake
 from ctre import WPI_TalonSRX, CANifier
 from automations.lifter import LifterAutomation
 
+
 class Robot(magicbot.MagicRobot):
     # Add magicbot components here using variable annotations.
     # Any components that directly actuate motors should be declared after
