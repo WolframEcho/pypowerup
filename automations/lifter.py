@@ -1,7 +1,7 @@
 from magicbot import StateMachine, state, timed_state
 import wpilib
 from components.lifter import Lifter
-from componets.intake import Intake
+from components.intake import Intake
 
 
 class LifterAutomation(StateMachine):
@@ -36,5 +36,3 @@ class LifterAutomation(StateMachine):
     @state(must_finish=True)
     def reset(self):
         self.intake.intake_push(False)
-        self.lifter.ground_height()
-        self.done
