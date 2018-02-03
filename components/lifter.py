@@ -1,12 +1,13 @@
 import ctre
 from networktables import NetworkTables
 
+
 class Lifter:
     lift_motor: ctre.WPI_TalonSRX
     #  TODO find encoder values, tune height values to include robot height and cube
     COUNTS_PER_REV = None
     DISTANCE_PER_COUNT = None  # in cm
-    
+
     SWITCH_HEIGHT = 47.625
     LOWER_SCALE = 121.92
     BALANCED_SCALE = 152.4
@@ -49,7 +50,7 @@ class Lifter:
             self.default_height = self.BALANCED_SCALE
         elif pos > 45 and pos <= 135:  # Right button
             self.default_height = self.UPPER_SCALE
-        elif pos > 135 and pos <= 225:  # Down button 
+        elif pos > 135 and pos <= 225:  # Down button
             self.default_height = self.SWITCH_HEIGHT
         elif pos > 255 and pos < 315:  # Left button
             self.default_height = self.LOWER_SCALE
