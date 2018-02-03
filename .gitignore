@@ -41,6 +41,7 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
+.pytest_cache/
 nosetests.xml
 coverage.xml
 *.cover
@@ -124,4 +125,14 @@ tags
 .idea/
 # file-based project format
 *.iws
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
 .vscode/
+tsconfig.json
+jsconfig.json
+
+### RobotPy ###
+.deploy_cfg
+networktables.ini
